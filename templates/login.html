@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voyage - Premium Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<!-- BUG #4 FIX: removed the duplicate Material Symbols link that was here -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "on-secondary-container": "#b0b2ff","inverse-on-surface": "#293040","on-tertiary-fixed-variant": "#723600","surface-variant": "#2e3545","primary-fixed": "#d8e2ff","on-tertiary-fixed": "#311400","surface-container-lowest": "#070e1d","surface-container": "#191f2f","error-container": "#93000a","on-primary-fixed-variant": "#004395","tertiary": "#ffb786","surface-bright": "#323949","inverse-primary": "#005ac2","surface-dim": "#0c1322","inverse-surface": "#dce2f7","secondary-fixed": "#e1e0ff","surface-container-low": "#141b2b","surface": "#0c1322","on-secondary-fixed": "#07006c","on-primary-fixed": "#001a42","background": "#0c1322","outline-variant": "#424754","outline": "#8c909f","on-primary-container": "#00285d","on-background": "#dce2f7","tertiary-container": "#df7412","primary-container": "#4d8eff","on-error": "#690005","tertiary-fixed": "#ffdcc6","primary": "#adc6ff","on-primary": "#002e6a","error": "#ffb4ab","surface-tint": "#adc6ff","surface-container-high": "#232a3a","secondary-container": "#3131c0","on-tertiary-container": "#461f00","surface-container-highest": "#2e3545","on-surface-variant": "#c2c6d6","on-secondary-fixed-variant": "#2f2ebe","secondary-fixed-dim": "#c0c1ff","tertiary-fixed-dim": "#ffb786","primary-fixed-dim": "#adc6ff","on-surface": "#dce2f7","secondary": "#c0c1ff","on-tertiary": "#502400","on-secondary": "#1000a9","on-error-container": "#ffdad6"
+        },
+        "borderRadius": {"DEFAULT": "0.125rem","lg": "0.25rem","xl": "0.5rem","full": "0.75rem"},
+        "spacing": {"xl": "3rem","gutter": "1.5rem","md": "1.5rem","margin": "2rem","sm": "1rem","xs": "0.5rem","unit": "4px","lg": "2rem"},
+        "fontFamily": {"body-md": ["Inter"],"body-lg": ["Inter"],"label-sm": ["Inter"],"h1": ["Inter"],"h2": ["Inter"],"h3": ["Inter"],"label-md": ["Inter"]},
+        "fontSize": {
+          "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+          "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+          "h1": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "h2": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "h3": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+          "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+        }
+      },
+    },
+  }
+</script>
+<style>
+  .glass-panel {
+    background: rgba(31, 41, 55, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(55, 65, 81, 0.5);
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  body { min-height: max(884px, 100dvh); }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+
+<!-- Background Decorative Elements -->
+<div class="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden pointer-events-none">
+  <div class="absolute -top-[20%] -left-[10%] w-[60%] h-[60%] bg-primary-container/10 blur-[120px] rounded-full"></div>
+  <div class="absolute -bottom-[20%] -right-[10%] w-[60%] h-[60%] bg-secondary-container/10 blur-[120px] rounded-full"></div>
+</div>
+
+<!-- Top Bar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center h-16 px-6 border-b border-slate-800 bg-slate-950/50 backdrop-blur-md">
+  <div class="flex items-center gap-2">
+    <span class="material-symbols-outlined text-blue-500">flight_takeoff</span>
+    <span class="text-lg font-bold text-slate-100 tracking-tighter">Voyage</span>
+  </div>
+</header>
+
+<main class="w-full max-w-md px-margin z-10">
+  <!-- Login Card -->
+  <div class="glass-panel p-lg rounded-xl shadow-2xl">
+    <div class="mb-xl">
+      <h1 class="font-h1 text-h1 text-on-surface mb-xs">Welcome Back</h1>
+      <p class="font-body-md text-on-surface-variant">Sign in to manage your next adventure.</p>
+      <!-- Demo hint -->
+      <p class="mt-sm text-xs text-outline bg-surface-container-high rounded-lg px-sm py-xs">
+        Demo credentials: <strong class="text-primary">admin</strong> / <strong class="text-primary">password123</strong>
+      </p>
+    </div>
+
+    <form class="space-y-gutter" id="loginForm">
+      <!-- Username Field -->
+      <div class="space-y-unit">
+        <label class="font-label-md text-label-md text-on-surface-variant block" for="username">Username</label>
+        <div class="relative group">
+          <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">person</span>
+          <input class="w-full h-12 pl-12 pr-4 bg-surface-container-high border border-outline-variant rounded-lg text-on-surface focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" id="username" placeholder="Enter your username" required type="text"/>
+        </div>
+      </div>
+
+      <!-- Password Field -->
+      <div class="space-y-unit">
+        <div class="flex justify-between items-center">
+          <label class="font-label-md text-label-md text-on-surface-variant block" for="password">Password</label>
+          <a class="font-label-sm text-label-sm text-primary hover:underline" href="#">Forgot?</a>
+        </div>
+        <div class="relative group">
+          <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">lock</span>
+          <input class="w-full h-12 pl-12 pr-4 bg-surface-container-high border border-outline-variant rounded-lg text-on-surface focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" id="password" placeholder="••••••••" required type="password"/>
+        </div>
+      </div>
+
+      <!--
+        BUG #3 FIX: The error box keeps its icon and text spans intact.
+        We only update the text span's textContent in JS — never innerHTML on the whole box.
+      -->
+      <div class="hidden p-sm bg-error-container/20 border border-error/30 rounded-lg flex items-center gap-xs" id="errorMessage">
+        <span class="material-symbols-outlined text-error text-[20px]">error</span>
+        <span class="font-label-sm text-label-sm text-error" id="errorText">Invalid credentials. Please try again.</span>
+      </div>
+
+      <!-- Login Action -->
+      <button class="w-full h-12 bg-primary-container hover:bg-primary-container/90 text-on-primary-container font-label-md text-label-md rounded-lg flex items-center justify-center gap-xs active:scale-[0.98] transition-transform duration-200" type="submit">
+        Sign In
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </button>
+    </form>
+
+    <div class="mt-lg pt-lg border-t border-outline-variant flex flex-col gap-md">
+      <p class="text-center font-label-sm text-label-sm text-on-surface-variant">Or continue with</p>
+      <div class="grid grid-cols-2 gap-sm">
+        <button class="h-12 border border-outline-variant rounded-lg hover:bg-surface-variant transition-colors flex items-center justify-center gap-xs">
+          <svg class="w-5 h-5" viewBox="0 0 24 24"><path d="M21.35,11.1H12.18V13.83H18.69C18.36,17.64 15.19,19.27 12.19,19.27C8.36,19.27 5,16.25 5,12C5,7.9 8.2,4.73 12.2,4.73C15.29,4.73 17.1,6.7 17.1,6.7L19,4.72C19,4.72 16.56,2 12.1,2C6.42,2 2.03,6.8 2.03,12C2.03,17.05 6.16,22 12.25,22C17.6,22 21.5,18.33 21.5,12.91C21.5,11.76 21.35,11.1 21.35,11.1V11.1Z" fill="currentColor"/></svg>
+          <span class="font-label-md text-label-md">Google</span>
+        </button>
+        <button class="h-12 border border-outline-variant rounded-lg hover:bg-surface-variant transition-colors flex items-center justify-center gap-xs">
+          <svg class="w-5 h-5" viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21.03C9.5,20.81 9.49,20.23 9.49,19.47C6.71,20.07 6.12,18.13 6.12,18.13C5.66,16.97 5,16.66 5,16.66C4.09,16.04 5.08,16.05 5.08,16.05C6.08,16.12 6.61,17.09 6.61,17.09C7.5,18.62 8.95,18.18 9.5,17.93C9.6,17.28 9.85,16.84 10.13,16.59C7.91,16.34 5.58,15.48 5.58,11.65C5.58,10.56 5.97,9.66 6.61,8.96C6.5,8.71 6.16,7.69 6.7,6.33C6.7,6.33 7.54,6.06 9.45,7.35C10.25,7.13 11.1,7.02 11.95,7.02C12.8,7.02 13.65,7.13 14.45,7.35C16.36,6.06 17.19,6.33 17.19,6.33C17.73,7.69 17.4,8.71 17.29,8.96C17.93,9.66 18.32,10.56 18.32,11.65C18.32,15.49 15.98,16.34 13.76,16.58C14.12,16.89 14.43,17.5 14.43,18.44C14.43,19.78 14.42,20.87 14.42,21.03C14.42,21.27 14.58,21.59 15.09,21.5C19.05,20.17 21.92,16.42 21.92,12A10,10 0 0,0 12,2Z" fill="currentColor"/></svg>
+          <span class="font-label-md text-label-md">GitHub</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Secondary CTA -->
+  <p class="mt-lg text-center font-body-md text-on-surface-variant">
+    Don't have an account?
+    <a class="text-primary font-semibold hover:underline" href="#">Create Account</a>
+  </p>
+</main>
+
+<!-- Aside panel (large screens) -->
+<aside class="hidden lg:flex fixed right-0 top-0 w-1/2 h-full bg-surface-container-low flex-col items-center justify-center p-xl">
+  <div class="relative w-full h-full rounded-xl overflow-hidden shadow-2xl">
+    <div class="absolute inset-0 bg-gradient-to-tr from-slate-950 via-slate-950/40 to-transparent z-10"></div>
+    <img alt="Modern aircraft window view" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAJGvdm7mxDixxt9ZE5K6zNT3ka-ZdZOsnj3gK0OwjRyqy9y6SnMjk_KtoKuY0GqFQyV91e4QdnWaW1BW7QiEpijN87sKOBXQMqUk9q0-b2sj6mHXrIoW18T4r1p4X_Mb8QbZttfbdsFaouATqjmvRN4PAiHWGj6ihac96c0ShgBSMhHBNbr8Af25AKfT1R2nHfRiXjuOuu3ynJEejn-q7IGF0uTcwTVR9-QP_83PV4lL544VhhMYqARK1kNCqAgeiGRNT3ah1zA"/>
+    <div class="absolute bottom-xl left-xl z-20 max-w-md">
+      <span class="inline-block px-sm py-xs bg-primary-container text-on-primary-container rounded-full text-label-sm font-bold uppercase tracking-widest mb-md">New Feature</span>
+      <h2 class="text-[48px] leading-tight font-bold text-slate-100 mb-sm">AI-Powered Itineraries</h2>
+      <p class="text-body-lg text-slate-300">Plan your perfect trip with Voyager's new predictive travel engine. Less searching, more exploring.</p>
+    </div>
+  </div>
+</aside>
+
+<footer class="fixed bottom-margin w-full text-center lg:w-1/2 lg:left-0">
+  <p class="font-label-sm text-label-sm text-outline">© 2024 Voyager Travel Systems. All rights reserved.</p>
+</footer>
+
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const errorBox  = document.getElementById("errorMessage");
+    const errorText = document.getElementById("errorText"); // BUG #3 FIX: target only the text span
+
+    /*
+      BUG #1 + #2 FIX:
+      Removed the localStorage.getItem("user") check entirely.
+      That block always returned early because no signup page ever stored a user,
+      which meant the hardcoded credentials check below NEVER ran.
+      Now we go straight to checking the demo credentials.
+    */
+    if (username === "admin" && password === "password123") {
+      // Save login state and redirect
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("username", username);
+      window.location.href = "home.html"; // BUG #2 FIX: now actually reachable
+    } else {
+      // BUG #3 FIX: only update the text span, not the whole errorBox innerHTML
+      // This preserves the error icon and the flex layout
+      errorText.textContent = "Wrong credentials. Try: admin / password123";
+      errorBox.classList.remove("hidden");
+    }
+  });
+</script>
+</body>
+</html>

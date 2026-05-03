@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voyage | Budget Planner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#b0b2ff",
+                        "inverse-on-surface": "#293040",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "surface-variant": "#2e3545",
+                        "primary-fixed": "#d8e2ff",
+                        "on-tertiary-fixed": "#311400",
+                        "surface-container-lowest": "#070e1d",
+                        "surface-container": "#191f2f",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#004395",
+                        "tertiary": "#ffb786",
+                        "surface-bright": "#323949",
+                        "inverse-primary": "#005ac2",
+                        "surface-dim": "#0c1322",
+                        "inverse-surface": "#dce2f7",
+                        "secondary-fixed": "#e1e0ff",
+                        "surface-container-low": "#141b2b",
+                        "surface": "#0c1322",
+                        "on-secondary-fixed": "#07006c",
+                        "on-primary-fixed": "#001a42",
+                        "background": "#0c1322",
+                        "outline-variant": "#424754",
+                        "outline": "#8c909f",
+                        "on-primary-container": "#00285d",
+                        "on-background": "#dce2f7",
+                        "tertiary-container": "#df7412",
+                        "primary-container": "#4d8eff",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#ffdcc6",
+                        "primary": "#adc6ff",
+                        "on-primary": "#002e6a",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#adc6ff",
+                        "surface-container-high": "#232a3a",
+                        "secondary-container": "#3131c0",
+                        "on-tertiary-container": "#461f00",
+                        "surface-container-highest": "#2e3545",
+                        "on-surface-variant": "#c2c6d6",
+                        "on-secondary-fixed-variant": "#2f2ebe",
+                        "secondary-fixed-dim": "#c0c1ff",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-surface": "#dce2f7",
+                        "secondary": "#c0c1ff",
+                        "on-tertiary": "#502400",
+                        "on-secondary": "#1000a9",
+                        "on-error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "3rem",
+                        "gutter": "1.5rem",
+                        "md": "1.5rem",
+                        "margin": "2rem",
+                        "sm": "1rem",
+                        "xs": "0.5rem",
+                        "unit": "4px",
+                        "lg": "2rem"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "h3": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "h1": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h2": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "h3": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(31, 41, 55, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(55, 65, 81, 1);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0c1322;
+            color: #dce2f7;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md overflow-x-hidden relative">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-950 flex justify-between items-center h-16 px-6 w-full border-b border-slate-800">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-blue-500" data-icon="flight_takeoff">flight_takeoff</span>
+<h1 class="text-lg font-bold text-slate-100 tracking-tighter">Wandr</h1>
+</div>
+<div class="flex items-center gap-sm">
+<button class="text-slate-400 hover:bg-slate-800/50 p-2 rounded-full transition-transform duration-200 active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-slate-700">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a person with a friendly expression, set against a neutral, high-end studio background. The lighting is soft and cinematic, highlighting facial features with a warm glow. This minimalist portrait fits a premium travel application's user interface, maintaining a sophisticated and clean aesthetic with a focus on high-quality digital photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpQQ05EHrqvlVGVllT-TiaPZQ72z803uMSRf7HN863wY_EAigpJsVuRr88x337A190dEesUMe_yUrdI0kQzgDdj2vuO6PEQXFaR3bq1f7cvto0Tlz6E6ljbxgMigAFOWbPR4Ff3ZDMkC8UJTVzGLm7IhXh9D1_RlrCBV2jKh4aUek8ibjXKMNU_1T4a5fjQ9fh1xFc_E9VTDA3HWjaAtQAyorXqQCba6u1G3yrw7gwBHVSTo9K4jM27nORjyi9T7a-dZEpzDoaCw"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 px-margin max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+    <!-- Background Image -->
+<div class="fixed inset-0 -z-10">
+  <img 
+    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+    class="w-full h-full object-cover"
+  />
+  <!-- Dark overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-[#0c1322]/90 via-[#0c1322]/80 to-[#0c1322]"></div>
+</div>
+<!-- Welcome & Currency Toggle Section -->
+<section class="lg:col-span-12 flex flex-col md:flex-row md:items-end justify-between gap-md mb-md">
+<div>
+<h2 class="font-h1 text-h1 text-on-background">Budget Overview</h2>
+<a class="text-primary font-label-md flex items-center gap-xs hover:underline mt-xs" href="suggestion.html">
+                    View Suggestions
+                    <span class="material-symbols-outlined text-[18px]" data-icon="chevron_right">chevron_right</span>
+                </a>
+<p class="font-body-md text-on-surface-variant mt-xs">Manage your financial trajectory for the Tokyo Expedition.</p>
+</div>
+<div class="glass-panel p-1 rounded-full flex gap-xs">
+<button class="px-6 py-2 rounded-full bg-primary text-on-primary font-label-md transition-all">USD</button>
+<button class="px-6 py-2 rounded-full text-on-surface-variant font-label-md hover:bg-surface-variant transition-all">INR</button>
+</div>
+</section>
+<!-- Bento Grid: Main Metrics -->
+<div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Total Budget Card -->
+<div class="glass-panel p-lg rounded-xl flex flex-col justify-between min-h-[180px] hover:border-outline transition-colors group">
+<div class="flex justify-between items-start">
+<span class="font-label-md text-on-surface-variant uppercase tracking-widest">Total Budget</span>
+<span class="material-symbols-outlined text-primary" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div>
+<div class="font-h2 text-h2 text-on-background">$5,000.00</div>
+<div class="flex items-center gap-xs text-secondary mt-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="trending_up">trending_up</span>
+<span class="font-label-sm">Allocated for 12 days</span>
+</div>
+</div>
+</div>
+<!-- Current Expenses Card -->
+<div class="glass-panel p-lg rounded-xl flex flex-col justify-between min-h-[180px] hover:border-outline transition-colors group">
+<div class="flex justify-between items-start">
+<span class="font-label-md text-on-surface-variant uppercase tracking-widest">Trip Cost</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="payments">payments</span>
+</div>
+<div>
+<div class="font-h2 text-h2 text-on-background">$3,420.50</div>
+<div class="flex items-center gap-xs text-on-surface-variant mt-xs">
+<span class="font-label-sm">68% of total budget used</span>
+</div>
+</div>
+</div>
+<!-- Remaining Budget Visualization -->
+<div class="md:col-span-2 glass-panel p-lg rounded-xl">
+<div class="flex justify-between items-center mb-md">
+<div class="flex flex-col">
+<span class="font-label-md text-on-surface-variant uppercase tracking-widest">Remaining Funds</span>
+<div class="font-h2 text-h2 text-primary">$1,579.50</div>
+</div>
+<div class="text-right">
+<span class="font-label-md text-on-surface-variant uppercase tracking-widest">Health Status</span>
+<div class="font-h3 text-h3 text-tertiary">Near Limit</div>
+</div>
+</div>
+<!-- Dynamic Progress Bar -->
+<div class="w-full h-4 bg-surface-container-highest rounded-full overflow-hidden border border-outline-variant">
+<!-- Progress: Yellow state for "Near Limit" -->
+<div class="h-full bg-tertiary w-[68%] relative">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent to-white/20"></div>
+</div>
+</div>
+<div class="flex justify-between mt-sm">
+<span class="font-label-sm text-on-surface-variant">0%</span>
+<span class="font-label-sm text-tertiary font-bold">Limit Warning (80%)</span>
+<span class="font-label-sm text-on-surface-variant">100%</span>
+</div>
+</div>
+</div>
+<!-- Sticky Sidebar: Actions & Insights -->
+<aside class="lg:col-span-4 space-y-gutter">
+<!-- Save Action Card -->
+<div class="glass-panel p-lg rounded-xl border-primary-container/30 bg-primary-container/5">
+<h3 class="font-h3 text-h3 text-on-background mb-sm">Secure Your Plan</h3>
+<p class="font-body-md text-on-surface-variant mb-lg">Finalize these calculations and save this itinerary to your secure cloud vault.</p>
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-bold flex items-center justify-center gap-sm active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined" data-icon="save">save</span>
+                    SAVE PLAN
+                </button>
+</div>
+<!-- Insights Card -->
+<div class="glass-panel p-lg rounded-xl">
+<h3 class="font-label-md text-on-surface-variant uppercase tracking-widest mb-md">Budget Breakdown</h3>
+<div class="space-y-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="font-body-md text-on-surface">Flights</span>
+</div>
+<span class="font-label-md">$1,200</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="font-body-md text-on-surface">Lodging</span>
+</div>
+<span class="font-label-md">$1,850</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="font-body-md text-on-surface">Dining</span>
+</div>
+<span class="font-label-md">$370.50</span>
+</div>
+</div>
+<div class="mt-lg pt-md border-t border-outline-variant">
+<button class="text-primary font-label-md flex items-center gap-xs hover:underline">
+                        View Detailed Ledger
+                        <span class="material-symbols-outlined text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Trip Visualization -->
+<div class="relative h-48 rounded-xl overflow-hidden border border-outline-variant">
+<img alt="Tokyo Skyline" class="w-full h-full object-cover" data-alt="A breathtaking night view of the Tokyo skyline with the Tokyo Tower glowing in warm orange hues against a deep blue twilight sky. The city lights create a vibrant, shimmering tapestry of bokeh effects and sharp architectural details. The atmosphere is sophisticated and electric, reflecting a high-end urban travel experience with a cool, modern aesthetic and deep tonal shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNChlZiocAS40nz8_8hLcBHSMRFBXTXmJeQCL2Wxu-rC7A5t0SO_lBq8AvFOiPe5eCyF1wMrcyodQjHI9QSU1xm9ea7QogjEmf3q1A66sDibSE4AqgZbIaq9IZyzemLEen7Tib5rIgxJHrLYkNw7NxPOYQgf3ES6LG4j_p2kMl-ScjXzzUXvEs-tb-OxKdcDRfAxB_HUyZ0KOi0QDQzKJ3Nn1oDS3ERVqGFMUNpRMpYSfDWcva63VmgMUjIlVQLecwwN0bB4ov2A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="bg-primary/20 backdrop-blur-md text-primary text-[10px] font-bold px-2 py-1 rounded uppercase tracking-widest">Upcoming</span>
+<h4 class="font-h3 text-on-background mt-1">Tokyo Expedition</h4>
+</div>
+</div>
+</aside>
+</main>
+
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 pb-safe bg-slate-950/95 backdrop-blur-md flex justify-around items-center h-20 w-full px-4 border-t border-slate-800 md:hidden">
+<button class="flex flex-col items-center justify-center text-slate-500 p-2 active:scale-90 transition-all duration-150 hover:text-slate-200">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-blue-500 p-2 active:scale-90 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="travel_explore">travel_explore</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">Trips</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-500 p-2 active:scale-90 transition-all duration-150 hover:text-slate-200">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">Profile</span>
+</button>
+</nav>
+<!-- Success Modal (Hidden by Default) -->
+<div class="hidden fixed inset-0 z-[100] flex items-center justify-center p-gutter" id="save-confirmation">
+<div class="absolute inset-0 bg-slate-950/80 backdrop-blur-sm"></div>
+<div class="glass-panel p-xl rounded-xl max-w-sm w-full relative z-10 text-center">
+<div class="w-16 h-16 bg-primary/20 text-primary rounded-full flex items-center justify-center mx-auto mb-md">
+<span class="material-symbols-outlined text-4xl" data-icon="check_circle">check_circle</span>
+</div>
+<h3 class="font-h2 text-on-background mb-xs">Plan Saved</h3>
+<p class="font-body-md text-on-surface-variant mb-lg">Your itinerary and budget have been successfully synchronized.</p>
+<button class="w-full bg-surface-variant text-on-background py-3 rounded-lg font-label-md border border-outline-variant">Dismiss</button>
+</div>
+</div>
+</body></html>

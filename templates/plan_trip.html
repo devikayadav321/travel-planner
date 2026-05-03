@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Plan Your Journey - Voyage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#b0b2ff",
+                        "inverse-on-surface": "#293040",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "surface-variant": "#2e3545",
+                        "primary-fixed": "#d8e2ff",
+                        "on-tertiary-fixed": "#311400",
+                        "surface-container-lowest": "#070e1d",
+                        "surface-container": "#191f2f",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#004395",
+                        "tertiary": "#ffb786",
+                        "surface-bright": "#323949",
+                        "inverse-primary": "#005ac2",
+                        "surface-dim": "#0c1322",
+                        "inverse-surface": "#dce2f7",
+                        "secondary-fixed": "#e1e0ff",
+                        "surface-container-low": "#141b2b",
+                        "surface": "#0c1322",
+                        "on-secondary-fixed": "#07006c",
+                        "on-primary-fixed": "#001a42",
+                        "background": "#0c1322",
+                        "outline-variant": "#424754",
+                        "outline": "#8c909f",
+                        "on-primary-container": "#00285d",
+                        "on-background": "#dce2f7",
+                        "tertiary-container": "#df7412",
+                        "primary-container": "#4d8eff",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#ffdcc6",
+                        "primary": "#adc6ff",
+                        "on-primary": "#002e6a",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#adc6ff",
+                        "surface-container-high": "#232a3a",
+                        "secondary-container": "#3131c0",
+                        "on-tertiary-container": "#461f00",
+                        "surface-container-highest": "#2e3545",
+                        "on-surface-variant": "#c2c6d6",
+                        "on-secondary-fixed-variant": "#2f2ebe",
+                        "secondary-fixed-dim": "#c0c1ff",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-surface": "#dce2f7",
+                        "secondary": "#c0c1ff",
+                        "on-tertiary": "#502400",
+                        "on-secondary": "#1000a9",
+                        "on-error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "3rem",
+                        "gutter": "1.5rem",
+                        "md": "1.5rem",
+                        "margin": "2rem",
+                        "sm": "1rem",
+                        "xs": "0.5rem",
+                        "unit": "4px",
+                        "lg": "2rem"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "h3": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "h1": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h2": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "h3": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(31, 41, 55, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(55, 65, 81, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-950 border-b border-slate-800 flex justify-between items-center h-16 px-6 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-500" data-icon="flight_takeoff">flight_takeoff</span>
+<h1 class="text-lg font-bold text-slate-100 tracking-tighter">Voyage</h1>
+</div>
+<div class="flex items-center gap-4">
+<nav class="hidden md:flex gap-6 mr-6">
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-400 hover:bg-slate-800/50 px-3 py-1 rounded transition-all" href="home.html">Home</a>
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-blue-500 px-3 py-1 rounded" href="plan_trip.html">Plan Trip</a>
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-400 hover:bg-slate-800/50 px-3 py-1 rounded transition-all" href="explore.html">Explore</a>
+<a href="home.html">← Back</a>
+</nav>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-slate-700 active:scale-95 transition-transform duration-200 cursor-pointer">
+<img alt="User Profile" data-alt="A professional headshot of a traveler in their late 20s with soft, cinematic side-lighting. The background is a blurred metropolitan skyline at dusk, emphasizing a modern, global-citizen aesthetic. The image uses a cool-toned color palette with deep blues and subtle amber highlights to match a premium dark-mode interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7pcPQnNJ_WTI9TjpAgSARPUWen7vk6ILBkiTUXyKoWHLa1UH0-BglfjrWRXciy7rdg5LD5k1d741BD-zib2WfguTgeK9KtPNW9EkaZCuPwvYypMRZtJyAc0hVyaPsh-QlcUebEVxgx5SVKz46M8Z5Zg8ezwTDkKmEP6NypcWBBnDbGwyLVmD7u_eDW5Sm16_New2izlQGY373qwNytEbmSLHMJBVq4SZLUNCwNORkrQhYQO2nbCV8YuyNx5jolqGZZljOfceljQ"/>
+</div>
+</div>
+</header>
+<main class="pt-24 px-margin max-w-6xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-xl relative rounded-xl overflow-hidden h-[300px] flex items-end p-lg group">
+<div class="absolute inset-0 z-0">
+<img alt="Expedition Background" class="w-full h-full object-cover grayscale opacity-40 transition-transform duration-700 group-hover:scale-105" data-alt="A breathtaking aerial view of jagged mountain peaks shrouded in morning mist and low-hanging clouds. The photography style is minimalist and moody, utilizing high contrast and a monochromatic dark palette with subtle hints of deep slate blue. The lighting is ethereal and diffused, creating a serene and expansive atmosphere perfect for a travel planning dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7uS_MAnQjI4BlLV3Mpy4_hod_FFrNxSXjBvXSuO07dVhNicwXBhjB2o_B7UJFP2A1HxyeRXWu3fW8eqOJee5tZ-5fmqnduiqRkYR6IcxG-bovWmlSU_nDXWtM1g3M_EzXanhe6YW3sfoxCX-kUID6UREQ8YM6Uq8fw-JfOYZeEtfjmf5qQFyVDN8_YXMxzECblACgYm9E2SzORTDWhSOpOymUZ13k21FU4DAsPC2vb4eFtb55o0Pei8PIRaLUzaNfE6JtnOYHRw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10">
+<h2 class="font-h1 text-h1 text-on-surface mb-xs">Where to next?</h2>
+<p class="font-body-lg text-body-lg text-outline">Define your journey parameters to unlock curated experiences.</p>
+</div>
+</section>
+<!-- Main Form Container -->
+<form class="grid grid-cols-1 lg:grid-cols-12 gap-gutter" id="tripForm">
+<!-- Trip Basics Card -->
+<div class="lg:col-span-8 glass-panel rounded-xl p-lg flex flex-col gap-lg">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="explore">explore</span>
+<h3 class="font-h3 text-h3">Core Itinerary</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-outline px-1">Departure Point</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="location_on">location_on</span>
+<input class="w-full h-[48px] pl-12 bg-surface-container border border-outline-variant rounded-lg text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" name="fromLocation" placeholder="City or Airport" required="" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-outline px-1">Destination</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="map">map</span>
+<input class="w-full h-[48px] pl-12 bg-surface-container border border-outline-variant rounded-lg text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" name="toLocation" placeholder="Dream destination" required="" type="text"/>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-outline px-1">Trip Persona</label>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-xs">
+<label class="cursor-pointer">
+<input class="peer hidden" name="tripType" required="" type="radio" value="Solo"/>
+<div class="flex flex-col items-center justify-center p-md bg-surface-container border border-outline-variant rounded-lg peer-checked:border-primary peer-checked:bg-primary-container/10 transition-all hover:bg-surface-variant">
+<span class="material-symbols-outlined mb-xs" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">Solo</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer hidden" name="tripType" type="radio" value="Family"/>
+<div class="flex flex-col items-center justify-center p-md bg-surface-container border border-outline-variant rounded-lg peer-checked:border-primary peer-checked:bg-primary-container/10 transition-all hover:bg-surface-variant">
+<span class="material-symbols-outlined mb-xs" data-icon="family_restroom">family_restroom</span>
+<span class="font-label-sm text-label-sm">Family</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer hidden" name="tripType" type="radio" value="Friends"/>
+<div class="flex flex-col items-center justify-center p-md bg-surface-container border border-outline-variant rounded-lg peer-checked:border-primary peer-checked:bg-primary-container/10 transition-all hover:bg-surface-variant">
+<span class="material-symbols-outlined mb-xs" data-icon="group">group</span>
+<span class="font-label-sm text-label-sm">Friends</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer hidden" name="tripType" type="radio" value="Romantic"/>
+<div class="flex flex-col items-center justify-center p-md bg-surface-container border border-outline-variant rounded-lg peer-checked:border-primary peer-checked:bg-primary-container/10 transition-all hover:bg-surface-variant">
+<span class="material-symbols-outlined mb-xs" data-icon="favorite">favorite</span>
+<span class="font-label-sm text-label-sm">Romantic</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer hidden" name="tripType" type="radio" value="Business"/>
+<div class="flex flex-col items-center justify-center p-md bg-surface-container border border-outline-variant rounded-lg peer-checked:border-primary peer-checked:bg-primary-container/10 transition-all hover:bg-surface-variant">
+<span class="material-symbols-outlined mb-xs" data-icon="work">work</span>
+<span class="font-label-sm text-label-sm">Business</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Logistics Card -->
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<div class="glass-panel rounded-xl p-lg flex flex-col gap-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-tertiary" data-icon="tune">tune</span>
+<h3 class="font-h3 text-h3">Logistics</h3>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-outline">Group Size</label>
+<div class="relative">
+<input class="w-full h-[48px] px-4 bg-surface-container border border-outline-variant rounded-lg text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" min="1" name="peopleCount" required="" type="number" value="1"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-outline font-label-sm uppercase">Travelers</span>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-outline">Duration (Days)</label>
+<div class="relative">
+<input class="w-full h-[48px] px-4 bg-surface-container border border-outline-variant rounded-lg text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" min="1" name="dayCount" required="" type="number" value="7"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-outline font-label-sm uppercase">Days</span>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-outline">Total Budget ($)</label>
+<div class="relative">
+<input class="w-full h-[48px] px-4 bg-surface-container border border-outline-variant rounded-lg text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" min="1000" name="budget" required="" step="100" type="number" value="2500"/>
+<span class="absolute right-4 top-1/2 -translate-y-1/2 text-outline font-label-sm uppercase">Min $1k</span>
+</div>
+</div>
+<button class="mt-sm w-full bg-primary text-on-primary h-[56px] rounded-lg font-bold flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.98] transition-all" type="submit">
+<span>GENERATE ITINERARY</span>
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</button>
+</div>
+<div class="bg-surface-container-low rounded-xl p-md border border-outline-variant/30 text-center">
+<p class="font-label-sm text-outline">Voyage AI estimates a high probability of finding optimized flights for your current budget.</p>
+</div>
+</div>
+</form>
+</main>
+<!-- Bottom Navigation Shell (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 bg-slate-950/95 backdrop-blur-md border-t border-slate-800 flex justify-around items-center h-20 px-4 pb-safe">
+<a class="flex flex-col items-center justify-center text-slate-500 p-2 hover:text-slate-200 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-500 p-2 hover:text-slate-200 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="travel_explore">travel_explore</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">Trips</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 p-2 hover:text-slate-200 active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">Profile</span>
+</a>
+</nav>
+<script>
+document.getElementById('tripForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    const tripData = {
+        from: formData.get('fromLocation'),
+        to: formData.get('toLocation'),
+        type: formData.get('tripType'),
+        people: parseInt(formData.get('peopleCount')),
+        days: parseInt(formData.get('dayCount')),
+        budget: parseInt(formData.get('budget'))
+    };
+
+    // Strict validation
+    if (!tripData.from || !tripData.type) {
+        alert("Fill all required fields");
+        return;
+    }
+
+    if (tripData.people < 1 || tripData.days < 1 || tripData.budget < 1000) {
+        alert("Invalid inputs");
+        return;
+    }
+
+    // ✅ STORE WITH CORRECT KEY
+    localStorage.setItem('tripData', JSON.stringify(tripData));
+
+    // ✅ REDIRECT
+    window.location.href = "suggestions.html";
+});
+</script>
+</body></html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voyage | Plan your perfect trip</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#b0b2ff",
+                        "inverse-on-surface": "#293040",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "surface-variant": "#2e3545",
+                        "primary-fixed": "#d8e2ff",
+                        "on-tertiary-fixed": "#311400",
+                        "surface-container-lowest": "#070e1d",
+                        "surface-container": "#191f2f",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#004395",
+                        "tertiary": "#ffb786",
+                        "surface-bright": "#323949",
+                        "inverse-primary": "#005ac2",
+                        "surface-dim": "#0c1322",
+                        "inverse-surface": "#dce2f7",
+                        "secondary-fixed": "#e1e0ff",
+                        "surface-container-low": "#141b2b",
+                        "surface": "#0c1322",
+                        "on-secondary-fixed": "#07006c",
+                        "on-primary-fixed": "#001a42",
+                        "background": "#0c1322",
+                        "outline-variant": "#424754",
+                        "outline": "#8c909f",
+                        "on-primary-container": "#00285d",
+                        "on-background": "#dce2f7",
+                        "tertiary-container": "#df7412",
+                        "primary-container": "#4d8eff",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#ffdcc6",
+                        "primary": "#adc6ff",
+                        "on-primary": "#002e6a",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#adc6ff",
+                        "surface-container-high": "#232a3a",
+                        "secondary-container": "#3131c0",
+                        "on-tertiary-container": "#461f00",
+                        "surface-container-highest": "#2e3545",
+                        "on-surface-variant": "#c2c6d6",
+                        "on-secondary-fixed-variant": "#2f2ebe",
+                        "secondary-fixed-dim": "#c0c1ff",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-surface": "#dce2f7",
+                        "secondary": "#c0c1ff",
+                        "on-tertiary": "#502400",
+                        "on-secondary": "#1000a9",
+                        "on-error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xl": "3rem",
+                        "gutter": "1.5rem",
+                        "md": "1.5rem",
+                        "margin": "2rem",
+                        "sm": "1rem",
+                        "xs": "0.5rem",
+                        "unit": "4px",
+                        "lg": "2rem"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "h1": ["Inter"],
+                        "h2": ["Inter"],
+                        "h3": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "h1": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "h2": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "h3": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(31, 41, 55, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(55, 65, 81, 0.5);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, rgba(12, 19, 34, 0) 70%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Anchor -->
+<header class="fixed top-0 w-full z-50 bg-slate-950 border-b border-slate-800">
+<div class="flex justify-between items-center h-16 px-6 w-full">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-blue-500" data-icon="flight_takeoff">flight_takeoff</span>
+<span class="text-lg font-bold text-slate-100 tracking-tighter">Voyage</span>
+</div>
+<div class="hidden md:flex items-center gap-margin">
+<nav class="flex gap-lg">
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-blue-500 transition-colors duration-200" href="#">Home</a>
+<a class="font-['Inter'] text-sm font-medium tracking-tight text-slate-400 hover:bg-slate-800/50 px-2 py-1 rounded transition-colors duration-200" href="#">Trips</a>
+</nav>
+<div class="h-8 w-8 rounded-full bg-slate-800 flex items-center justify-center overflow-hidden border border-slate-700">
+<img alt="User" class="w-full h-full object-cover" data-alt="A clean and professional user profile avatar for a modern travel application. The avatar features a stylized male traveler with a friendly expression, wearing a navy blue shirt. The background is a simple, neutral gray, keeping the focus on the user profile identity within a high-end digital ecosystem." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiCEAnXjoZ8X1Gj8EXOrzlZ6-3hpBopQNmeK_DTk-75vPS4lLfc3IpiPNH16O9Ve56eSEUK0QZCpyBC8N73jim8QACElQuod1f_pqYLQjJzUG0hPyKp9VR5ub7BKax3Y0u7vkMIGfJhCG2HWsWad804Y_hGp4ZUlV3h7thK40ecrexvCu8JHkmPloo90udUXQ4Qh9_e_P1tSkTXvrT7v8OWZOGADIwVyDuPrK9F28O9sdtG7_1UWpharmw7LfTU074leDx4hd5gA"/>
+</div>
+</div>
+<button class="md:hidden text-slate-100 p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="relative min-h-screen flex flex-col items-center justify-center pt-16 overflow-hidden">
+<!-- Hero Background Decor -->
+<div class="absolute inset-0 hero-gradient pointer-events-none"></div>
+<div class="absolute -top-40 -right-40 w-96 h-96 bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="absolute -bottom-40 -left-40 w-96 h-96 bg-secondary/10 blur-[100px] rounded-full"></div>
+<!-- Hero Section -->
+<section class="relative z-10 w-full max-w-7xl px-margin flex flex-col items-center text-center">
+<div class="mb-sm px-4 py-1 rounded-full border border-outline/20 bg-surface-container-low/50 backdrop-blur-md">
+<span class="text-label-sm font-label-sm uppercase tracking-widest text-primary">Discover the World</span>
+</div>
+<h1 class="font-h1 text-h1 md:text-6xl lg:text-7xl mb-gutter max-w-4xl tracking-tight text-on-surface">
+                Plan your <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">perfect trip</span> with effortless precision.
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-xl opacity-80">
+                Experience the next generation of travel planning. Coordinate itineraries, track flights, and discover hidden gems in one unified, premium interface.
+            </p>
+<div class="flex flex-col sm:flex-row gap-gutter">
+<a class="bg-primary text-on-primary px-xl py-md rounded-xl font-bold flex items-center gap-xs hover:scale-[1.02] active:scale-95 transition-all shadow-lg shadow-primary/20" href="signup.html">
+                    Start Journey
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<button class="glass-panel text-on-surface px-xl py-md rounded-xl font-bold border border-outline/30 hover:bg-surface-container-high/50 transition-all">
+                    View Demo
+                </button>
+</div>
+<!-- Bento Preview Grid -->
+<div class="mt-xl w-full grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[240px]">
+<div class="md:col-span-8 glass-panel rounded-xl overflow-hidden relative group">
+<img alt="Aerial travel" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="A cinematic aerial view of a sleek passenger jet flying above a sea of fluffy white clouds during a golden hour sunset. The lighting is warm and ethereal, with deep orange and purple hues blending into a dark twilight sky. The image captures a sense of modern, high-end travel and tranquil movement through the upper atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN6hOnneRltwjIIMH2cSpraf9GFjysn6_lEH-c1ZR6t0TqfAlNdxr7ib5LEYkfrzipQ73nwAR26PrB0VyA7VwvLdIbyeyfatjt1FcmvkZrzEwIPsgmLgoB5WbrueVS08IFrqGvI2DnTt9SLzRW5tfcQOZS2TR4qwsJZvjb5yBzeS-2dRXuX_znB2Jzwnvx7S-mxUqQ6EzKk44F3m5Q1N7O6omUslFyCCd3zdnj1T4GKKrNR7fa3uRmg_0eU6VnUhx3WxKyUpt3Qg"/>
+<div class="absolute bottom-0 left-0 p-gutter text-left bg-gradient-to-t from-surface-dim to-transparent w-full">
+<h3 class="text-h3 font-h3 mb-xs">Seamless Itineraries</h3>
+<p class="text-on-surface-variant text-sm max-w-md">Real-time sync between your devices for a fluid travel experience across every time zone.</p>
+</div>
+</div>
+<div class="md:col-span-4 glass-panel rounded-xl p-gutter flex flex-col justify-between border-primary/20">
+<div class="h-12 w-12 rounded-lg bg-primary-container flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="explore">explore</span>
+</div>
+<div>
+<h3 class="text-h3 font-h3 mb-xs text-primary">Smart Explore</h3>
+<p class="text-on-surface-variant text-sm">AI-driven recommendations tailored to your unique travel style and preferences.</p>
+</div>
+</div>
+<div class="md:col-span-4 glass-panel rounded-xl p-gutter flex flex-col justify-end relative overflow-hidden">
+<div class="absolute top-0 right-0 p-gutter opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="map">map</span>
+</div>
+<h3 class="text-h3 font-h3 mb-xs">Global Coverage</h3>
+<p class="text-on-surface-variant text-sm">Detailed maps and logistics for over 2,000 destinations worldwide.</p>
+</div>
+<div class="md:col-span-8 glass-panel rounded-xl overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-high/80 to-transparent z-10 flex flex-col justify-center p-xl">
+<h3 class="text-h3 font-h3 mb-xs">Traveler Trusted</h3>
+<div class="flex -space-x-4">
+<img class="w-10 h-10 rounded-full border-2 border-surface" data-alt="User avatar 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNH2zVAL1PRPwq-WyXpYRVo2j8iUuPusL0naMy7B9oz4sSqI6htqdooadol69EpKNgQk7EJ6CMFMoS2N786-EA0NAi_zsBUFpi-1DP0LJZL2jDPAyg5vuq9umkbIa50jA_i-x5uLehhF3VT5b-e0eVnjX51PPxqS3al3xjWIZlGtOCMnYPHt9cbTw5Z7MyhrjGfuYh07ok7h4tdP6PG0HepI2O3CK4CQXAe0nVeOt8t4kGRObq-C6ZgwxpMOg_eejXOkf0syrvOQ"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface" data-alt="User avatar 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgWg2KPc_Ptg4YEuXydt_R6rOmLsP0UkrRYxNmyPSfqNWPW0kVakm-xQzDh3jpcVGVvs_kCwMcZnFfbUwFA8brtUJzPYfZ2sI6eBVnct23TkV_7cmynh9Fjkc9cNKFzGjZ4Mhb3B14xpVuvBnkOEvF2iBDJohVpAQ76Fg5m4y-qJm52IHQ9lhsJWRRsy5iLSXTkWH8KaonbuoXk4xa30ckh6NSO1Q936EFXs5s6XNcABEOdTMzlmugcySjypfB8_Vqmm3yYT-ogw"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface" data-alt="User avatar 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEZwDCr3LB7C_hv6Pw_A6_Hzci6QUGfEqfhGJv5pKvTv48QgTgApy49knqzQD6pfVj6_d7b_31X42T3LDdEReVfTwYAGZ8P4mc4XBJnZGTCMfBPJR_W5bAE-OX3NKLuFNoE6sqtTVwF6--UDarRodJmYFgo-F-glfu_476yVi1QzpyvuDsS653d1cVvIxTK0MVOmxu6k9hgVI261XBjkkDi-4WJOLbFShDZtvYrIALSBsMAG4tlkHxaTg_pgemcx7pCjs-rexclw"/>
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-slate-800 flex items-center justify-center text-[10px] font-bold">+12k</div>
+</div>
+<p class="mt-md text-on-surface-variant text-sm">Join a community of travelers planning better.</p>
+</div>
+<img alt="Landscape" class="w-full h-full object-cover opacity-30" data-alt="A breathtaking view of a modern mountain resort nestled in a lush, foggy valley at dawn. The architecture of the resort is minimalist and glass-heavy, reflecting the surrounding cool blue and green tones of the forest. The atmosphere is quiet and premium, evoking a sense of luxury, isolation, and sophisticated adventure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDh2S-35hg-LzeBkb97aORzIvOU_C4tmQEE7IHICYzVU0TmA67ZrxxhG5ECmqOgoGFpCLBeOnqyRrugGoHL8Lz8egx546Wzd04LzFTjFHv3DoJxEdr5QTZpRvG12kU8vgH3CO-oJyqPd8vQ67ZXdgztAvm645rtqUOhKT8EYy4x2lWSvdALeZ10HqyU3cs1jbNt8NaUkH-Eug60x7OU2cg7aYhO_5QDdmMagsVs-b1CPQuK04T8FCl4Qlr1VxDryIIWGA7Lwl7ApA"/>
+</div>
+</div>
+</section>
+<!-- Footer / Safety Spacer -->
+<footer class="w-full py-xl mt-xl border-t border-outline/10 text-center opacity-50">
+<p class="text-label-sm font-label-sm">© 2024 VOYAGE TRAVEL TECHNOLOGIES. ALL RIGHTS RESERVED.</p>
+</footer>
+</main>
+<!-- Mobile Bottom Navigation (Responsive Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 pb-safe bg-slate-950/95 backdrop-blur-md border-t border-slate-800">
+<div class="flex justify-around items-center h-20 w-full px-4">
+<button class="flex flex-col items-center justify-center text-blue-500 p-2 active:scale-90 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-500 p-2 hover:text-slate-200 active:scale-90 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="travel_explore">travel_explore</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">Trips</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-500 p-2 hover:text-slate-200 active:scale-90 transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[11px] font-semibold uppercase tracking-wider">Profile</span>
+</button>
+</div>
+</nav>
+</body></html>

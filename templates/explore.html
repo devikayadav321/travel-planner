@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wandr - Explore Destinations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#adc6ff",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "surface-dim": "#0c1322",
+                        "surface-container-low": "#141b2b",
+                        "on-surface-variant": "#c2c6d6",
+                        "on-secondary-container": "#b0b2ff",
+                        "surface-bright": "#323949",
+                        "tertiary": "#ffb786",
+                        "inverse-surface": "#dce2f7",
+                        "on-error-container": "#ffdad6",
+                        "on-error": "#690005",
+                        "outline": "#8c909f",
+                        "on-tertiary": "#502400",
+                        "surface-tint": "#adc6ff",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-tertiary-container": "#461f00",
+                        "on-background": "#dce2f7",
+                        "outline-variant": "#424754",
+                        "surface-container-lowest": "#070e1d",
+                        "error-container": "#93000a",
+                        "surface-container": "#191f2f",
+                        "tertiary-fixed": "#ffdcc6",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "on-primary": "#002e6a",
+                        "error": "#ffb4ab",
+                        "on-secondary": "#1000a9",
+                        "secondary-fixed-dim": "#c0c1ff",
+                        "secondary": "#c0c1ff",
+                        "on-surface": "#dce2f7",
+                        "on-secondary-fixed-variant": "#2f2ebe",
+                        "on-tertiary-fixed": "#311400",
+                        "inverse-on-surface": "#293040",
+                        "primary-container": "#4d8eff",
+                        "on-secondary-fixed": "#07006c",
+                        "inverse-primary": "#005ac2",
+                        "surface-container-highest": "#2e3545",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-primary-container": "#00285d",
+                        "surface-container-high": "#232a3a",
+                        "surface-variant": "#2e3545",
+                        "secondary-fixed": "#e1e0ff",
+                        "surface": "#0c1322",
+                        "on-primary-fixed": "#001a42",
+                        "tertiary-container": "#df7412",
+                        "primary-fixed": "#d8e2ff",
+                        "background": "#0c1322",
+                        "secondary-container": "#3131c0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "2rem",
+                        "unit": "4px",
+                        "sm": "1rem",
+                        "margin": "2rem",
+                        "xl": "3rem",
+                        "xs": "0.5rem",
+                        "md": "1.5rem",
+                        "gutter": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "h3": ["Inter"],
+                        "h2": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h1": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h3": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "h2": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "h1": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(31, 41, 55, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(55, 65, 81, 0.5);
+        }
+        .active-chip {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+            border: 1px solid #3B82F6 !important;
+        }
+        ::-webkit-scrollbar {
+            height: 4px;
+            width: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-24">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-gray-900/80 backdrop-blur-md dark:bg-gray-950/80 border-b border-gray-800 dark:border-gray-800/50">
+<div class="flex justify-between items-center px-6 h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-500 dark:text-blue-400" data-icon="travel_explore">travel_explore</span>
+<span class="text-xl font-bold tracking-tighter text-blue-500 dark:text-blue-400 font-h3">Wandr</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-gray-400 hover:bg-gray-800/50 p-2 rounded-full transition-colors" data-icon="notifications">notifications</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant">
+<img alt="User Profile" data-alt="A professional headshot of a traveler in a high-end digital setting, featuring soft studio lighting against a dark, minimalist charcoal background. The composition is clean and centered, emphasizing a premium user experience in a modern travel planning application. The aesthetic is sophisticated and utilitarian." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUIo8_Jbg80ZL8aE_cQbKUjt2x1FDht2xZR3eqSFjxGiuzgkKtLddzHCmY3NOuSREq-M3b9LDeRDQy4oHRX-OKjXVD-UKvyqz1vwe0KYmYExgOoW0unphmZDPm8nt6XrbrdPB1pbyyOHMQrMVSZtGccTmRfCt4EAa-5gaMV6mVxo0J3G-lqMeiknPFVZujj8u0e36iGQru1y3hQ69dBrIhy260aKobKYgqc7ke4AcIF4uQsl8QuUjRvi1ZpLSE0oz-ZJ8CqgN_vw"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 px-margin max-w-7xl mx-auto">
+<!-- Search & Discovery Hero -->
+<section class="mb-xl">
+<h1 class="font-h1 text-h1 mb-md text-on-background">Explore Destinations</h1>
+<!-- Glassmorphism Search Bar -->
+<div class="glass-panel rounded-xl p-xs mb-md flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline ml-sm" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-lg font-body-lg w-full text-on-surface placeholder:text-gray-500 py-3" placeholder="Where to next?" type="text"/>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md hover:opacity-90 active:scale-95 transition-all">
+                    Search
+                </button>
+</div>
+<!-- Scrollable Filter Chips -->
+<div class="flex gap-sm overflow-x-auto pb-xs no-scrollbar">
+<button class="flex-shrink-0 px-md py-xs rounded-full bg-surface-container border border-outline-variant text-label-md transition-all active-chip">
+                    All
+                </button>
+<button class="flex-shrink-0 px-md py-xs rounded-full bg-surface-container border border-outline-variant text-label-md hover:bg-surface-container-high transition-all">
+                    Beach
+                </button>
+<button class="flex-shrink-0 px-md py-xs rounded-full bg-surface-container border border-outline-variant text-label-md hover:bg-surface-container-high transition-all">
+                    Mountain
+                </button>
+<button class="flex-shrink-0 px-md py-xs rounded-full bg-surface-container border border-outline-variant text-label-md hover:bg-surface-container-high transition-all">
+                    City
+                </button>
+<button class="flex-shrink-0 px-md py-xs rounded-full bg-surface-container border border-outline-variant text-label-md hover:bg-surface-container-high transition-all">
+                    Budget
+                </button>
+<button class="flex-shrink-0 px-md py-xs rounded-full bg-surface-container border border-outline-variant text-label-md hover:bg-surface-container-high transition-all">
+                    Luxury
+                </button>
+</div>
+</section>
+<!-- Destination Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter mb-xl">
+<!-- Card 1: Bora Bora -->
+<div class="bg-surface-container border border-outline-variant rounded-xl overflow-hidden group hover:border-primary/50 transition-colors">
+<div class="relative h-64 overflow-hidden">
+<img alt="Bora Bora" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A breathtaking aerial view of Bora Bora's crystal-clear turquoise lagoons and overwater bungalows under a bright tropical sun. The scene captures the essence of luxury travel with pristine white sand and lush green palm trees. The lighting is vibrant and high-contrast, creating an idyllic and serene atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6LfzWVcW8up6qMawF9_SngTEGBFkb-smPs1f8SuJA03cAadOLSGrK98HuOVQLROA4pfO2FIu2bWUeWNocVO6DGJb-iP7iGlDAPEKp5jl-EWUA-iwBbaw_pnp3G2H7o1lPc3p6k4ICf9fkVKnKh2lV9kbdGIxOYprMFN_CgHuX_31sii5Yfb21UeHn0IfAbEHC6jnMOfFRU1lKZmS_eXSqD-0rLwPfUGzRlcNlgg1SIDUFu0um2n6RshiQ9SIMXG7ZtIN52ivBIA"/>
+<div class="absolute top-sm right-sm bg-gray-900/60 backdrop-blur-md px-sm py-xs rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-sm text-white">4.9</span>
+</div>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-xs">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Bora Bora</h3>
+<span class="text-label-sm text-outline-variant uppercase tracking-wider">Beach • Romantic</span>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold">₹4,500<span class="text-xs text-outline">/day</span></p>
+</div>
+</div>
+<div class="flex gap-xs mt-md">
+<button class="flex-1 bg-primary text-on-primary py-xs rounded-lg font-label-md hover:opacity-90 active:scale-95 transition-all">Use Plan</button>
+<button class="p-xs rounded-lg border border-outline-variant text-on-surface hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+</button>
+<button class="p-xs rounded-lg border border-outline-variant text-on-surface hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Swiss Alps -->
+<div class="bg-surface-container border border-outline-variant rounded-xl overflow-hidden group hover:border-primary/50 transition-colors">
+<div class="relative h-64 overflow-hidden">
+<img alt="Swiss Alps" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Majestic snow-capped peaks of the Swiss Alps towering over a dark evergreen forest during the golden hour. The sky is a deep indigo transitioning to soft amber at the horizon. The lighting is dramatic, highlighting the jagged textures of the mountain range and creating a sense of awe and adventure in a high-end utilitarian travel context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmeW6KuocTrbfNeyKHoXTgb6ydbdp6AAvDTi5aDY1XGZOhNHZm0axdkJ7bxzaPdipNR4_2vMOPGZe3hl8EViPI7sG40cZEPNijNQailgqeTLRVVhnSTj5SR-9ehSP-H1tY8MQuWYsgaVDB9C-CMlBfBEfZNrh_Q4gT-o6Amjp70EkiqWQh7q87sNK8rIF-dzhLXAo0WP6Bhr96S2c0KtuTPbaWcAcoPunN-4Ssx0z7Yu3E-hRl-_U8ejwDZ0gBh1QS0JnfQrK5pQ"/>
+<div class="absolute top-sm right-sm bg-gray-900/60 backdrop-blur-md px-sm py-xs rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-sm text-white">4.8</span>
+</div>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-xs">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Zermatt</h3>
+<span class="text-label-sm text-outline-variant uppercase tracking-wider">Mountain • Adventure</span>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold">₹6,200<span class="text-xs text-outline">/day</span></p>
+</div>
+</div>
+<div class="flex gap-xs mt-md">
+<button class="flex-1 bg-primary text-on-primary py-xs rounded-lg font-label-md hover:opacity-90 active:scale-95 transition-all">Use Plan</button>
+<button class="p-xs rounded-lg border border-outline-variant text-on-surface hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+</button>
+<button class="p-xs rounded-lg border border-outline-variant text-on-surface hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Tokyo -->
+<div class="bg-surface-container border border-outline-variant rounded-xl overflow-hidden group hover:border-primary/50 transition-colors">
+<div class="relative h-64 overflow-hidden">
+<img alt="Tokyo City" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="The vibrant neon cityscape of Tokyo at night, specifically the Shibuya Crossing with trails of light from moving vehicles. The scene is saturated with electric blues, purples, and hot pinks, reflecting the high-tech, futuristic energy of the city. The composition is dynamic and full of life, perfectly illustrating a modern urban travel destination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxgedJGJGzRetLk8rOn9K0e9VIuTUKE43KAD1xb2b4Q_Fr_Aw5GdNJ9oFwNsOgVjBPBRnouivEKtf7q6tHdMo9j9fOIT0RIcI4z0oo_Fype7oH9KwDd9JDO6ts5FbDViOJ6Pjs3NRk3Qd86CN95aQUNBC0meO4oPUZL4lCDXGgTa0G7X0dns9Fr7DIckxO2lugEWrvnkOLLxIP8AsBDXrI3IP6awPNgBXaKhEHXQJzmPdc3HwOst-ESH65f70OMORUfspNasKWLA"/>
+<div class="absolute top-sm right-sm bg-gray-900/60 backdrop-blur-md px-sm py-xs rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-sm text-white">4.9</span>
+</div>
+</div>
+<div class="p-md">
+<div class="flex justify-between items-start mb-xs">
+<div>
+<h3 class="font-h3 text-h3 text-on-surface">Tokyo</h3>
+<span class="text-label-sm text-outline-variant uppercase tracking-wider">City • Culture</span>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold">₹3,800<span class="text-xs text-outline">/day</span></p>
+</div>
+</div>
+<div class="flex gap-xs mt-md">
+<button class="flex-1 bg-primary text-on-primary py-xs rounded-lg font-label-md hover:opacity-90 active:scale-95 transition-all">Use Plan</button>
+<button class="p-xs rounded-lg border border-outline-variant text-on-surface hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+</button>
+<button class="p-xs rounded-lg border border-outline-variant text-on-surface hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- No Results State (Hidden) -->
+<div class="hidden flex-col items-center justify-center py-xl text-center">
+<span class="material-symbols-outlined text-6xl text-outline mb-md" data-icon="explore_off">explore_off</span>
+<h2 class="text-h2 font-h2 text-on-surface">No destinations found</h2>
+<p class="text-body-md text-outline mt-sm max-w-sm">Try adjusting your filters or searching for something else like "Island" or "History".</p>
+<button class="mt-lg text-primary font-label-md flex items-center gap-xs">
+                Clear all filters
+                <span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 pb-4 px-4 bg-gray-900 dark:bg-gray-950 border-t border-gray-800 dark:border-gray-800/50 z-50">
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-600 transition-transform active:scale-98 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home_app_logo">home_app_logo</span>
+<span class="text-[11px] font-medium font-inter uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-500 dark:text-blue-400 font-bold transition-transform active:scale-98 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="explore_nearby" data-weight="fill" style="font-variation-settings: 'FILL' 1;">explore_nearby</span>
+<span class="text-[11px] font-medium font-inter uppercase tracking-widest mt-1">Trips</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-600 transition-transform active:scale-98 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[11px] font-medium font-inter uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+<!-- Quick View Modal (Simulation Overlay) -->
+<div class="hidden fixed inset-0 z-[60] flex items-center justify-center p-margin">
+<div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+<div class="glass-panel w-full max-w-md rounded-xl p-lg relative z-10">
+<div class="flex justify-between items-start mb-md">
+<h2 class="text-h3 font-h3">Cost Breakdown</h2>
+<button class="material-symbols-outlined text-outline" data-icon="close">close</button>
+</div>
+<div class="space-y-sm">
+<div class="flex justify-between text-body-md">
+<span class="text-outline">Daily Budget</span>
+<span class="text-on-surface font-semibold">₹4,500</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span class="text-outline">Duration</span>
+<span class="text-on-surface font-semibold">10 Days</span>
+</div>
+<div class="border-t border-outline-variant pt-sm mt-md">
+<div class="flex justify-between text-h3">
+<span class="font-h3">Total Est.</span>
+<span class="text-primary font-bold">₹45,000</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-md rounded-lg font-label-md mt-lg hover:opacity-90 active:scale-95 transition-all">
+                Confirm Selection
+            </button>
+</div>
+</div>
+</body></html>

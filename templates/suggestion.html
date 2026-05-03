@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Voyage | Curated Suggestions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#b0b2ff",
+                    "inverse-on-surface": "#293040",
+                    "on-tertiary-fixed-variant": "#723600",
+                    "surface-variant": "#2e3545",
+                    "primary-fixed": "#d8e2ff",
+                    "on-tertiary-fixed": "#311400",
+                    "surface-container-lowest": "#070e1d",
+                    "surface-container": "#191f2f",
+                    "error-container": "#93000a",
+                    "on-primary-fixed-variant": "#004395",
+                    "tertiary": "#ffb786",
+                    "surface-bright": "#323949",
+                    "inverse-primary": "#005ac2",
+                    "surface-dim": "#0c1322",
+                    "inverse-surface": "#dce2f7",
+                    "secondary-fixed": "#e1e0ff",
+                    "surface-container-low": "#141b2b",
+                    "surface": "#0c1322",
+                    "on-secondary-fixed": "#07006c",
+                    "on-primary-fixed": "#001a42",
+                    "background": "#0c1322",
+                    "outline-variant": "#424754",
+                    "outline": "#8c909f",
+                    "on-primary-container": "#00285d",
+                    "on-background": "#dce2f7",
+                    "tertiary-container": "#df7412",
+                    "primary-container": "#4d8eff",
+                    "on-error": "#690005",
+                    "tertiary-fixed": "#ffdcc6",
+                    "primary": "#adc6ff",
+                    "on-primary": "#002e6a",
+                    "error": "#ffb4ab",
+                    "surface-tint": "#adc6ff",
+                    "surface-container-high": "#232a3a",
+                    "secondary-container": "#3131c0",
+                    "on-tertiary-container": "#461f00",
+                    "surface-container-highest": "#2e3545",
+                    "on-surface-variant": "#c2c6d6",
+                    "on-secondary-fixed-variant": "#2f2ebe",
+                    "secondary-fixed-dim": "#c0c1ff",
+                    "tertiary-fixed-dim": "#ffb786",
+                    "primary-fixed-dim": "#adc6ff",
+                    "on-surface": "#dce2f7",
+                    "secondary": "#c0c1ff",
+                    "on-tertiary": "#502400",
+                    "on-secondary": "#1000a9",
+                    "on-error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xl": "3rem",
+                    "gutter": "1.5rem",
+                    "md": "1.5rem",
+                    "margin": "2rem",
+                    "sm": "1rem",
+                    "xs": "0.5rem",
+                    "unit": "4px",
+                    "lg": "2rem"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "h1": ["Inter"],
+                    "h2": ["Inter"],
+                    "h3": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "h1": ["36px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "h2": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #0c1322; color: #dce2f7; -webkit-font-smoothing: antialiased; }
+        .glass-card {
+            background: rgba(31, 41, 55, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(55, 65, 81, 0.5);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="bg-slate-950 text-blue-500 font-['Inter'] text-sm font-medium tracking-tight fixed top-0 w-full z-50 border-b border-slate-800 flex justify-between items-center h-16 px-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="flight_takeoff">flight_takeoff</span>
+<span class="text-lg font-bold text-slate-100 tracking-tighter">Wandr</span>
+</div>
+<div class="flex items-center gap-gutter">
+<nav class="hidden md:flex gap-6">
+<a class="text-blue-500 font-label-md" href="home.html">Home</a>
+<a class="text-slate-400 font-label-md hover:text-slate-200" href="trips.html">Trips</a>
+<a class="text-slate-400 font-label-md hover:text-slate-200" href="explore.html">Explore</a>
+<a class="text-slate-400 font-label-md hover:text-slate-200" href="home.html">Back</a>
+</nav>
+<div class="h-8 w-8 rounded-full bg-surface-container-highest border border-outline-variant overflow-hidden">
+<img alt="User Profile" class="h-full w-full object-cover" data-alt="A professional close-up studio portrait of a young man with a friendly expression. The lighting is soft and cinematic, using a high-key setup that complements the dark, minimalist UI of the application. The background is a muted, deep slate grey, ensuring the subject remains the focal point while maintaining a premium, utilitarian aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZTLvdy-h2bWICeCSBA2oMmfQ1anh1iUwNFCfqVfsQewXFT_bzp5rt6x3f7dNM6eKV-FtBf8_bQg1nNW3x5C1JGK1aBKBo8eUBrLxkM_nRsyITG1VMf6Ul44VG3GbNwPIbIg6qgXu2WAQWpWxu09o5ZaUqTKg2giUrtqXO0bFricavXfO5X-FAw4AR4HZssgtBW72b-LzbV3l3sD2lTfikIiH1xeX87SvS6MJJclXuwunAstCF_b4dXLOFD2-7NVTFDOm4Z81aYQ"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-margin max-w-7xl mx-auto min-h-screen">
+<!-- Header Section -->
+<section class="mb-xl">
+<div class="flex flex-col gap-xs">
+<span class="text-primary font-label-md tracking-widest uppercase">Your Curated Escape</span>
+<h1 class="font-h1 text-on-background">Destinations for You</h1>
+<p class="text-on-surface-variant font-body-md max-w-2xl mt-sm">
+                    Based on your travel style and total budget, we've identified these premium destinations that match your criteria. Select your next journey to finalize your itinerary.
+                </p>
+</div>
+</section>
+<!-- Dynamic Bento Grid for Suggestions -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Dubai Card - Large Feature -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl glass-card transition-all duration-300 hover:scale-[1.01]">
+<div class="absolute inset-0 z-0">
+<img alt="Dubai Skyline" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700" data-alt="A breathtaking wide-angle shot of the Dubai skyline at dusk, featuring the Burj Khalifa piercing through a soft layer of golden haze. The city lights begin to twinkle in a cool blue hue, contrasting with the warm orange of the setting sun. The aesthetic is ultra-modern, clean, and high-end, perfectly fitting a premium travel planning application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvgEVZcI0o2M1btIalc14peS9bZBmidojUKw9q6HlJBGMJVb0L0ppXhYeWv_MOEEr1Cx-Db_EaGXcjdoVWpkcJzNH4tlowcfwlwfMlGx1IPHHv-6jdkiT8YSAEEImNncSJJYiE08L0H2SBxQAjOmlnNcxj5Ua03KsGeZFHrVjvfrguVhDYd5lUxrDormURx9TjYpcfhKC4bdRPyB7v9yc4PV4dSPq_MRWGvOv5m8zfs4dEo_eGQfQliNCkJK1uvpE4NODGGv68ig"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 p-lg h-full flex flex-col justify-end">
+<div class="flex justify-between items-end">
+<div>
+<div class="flex gap-2 mb-sm">
+<span class="px-3 py-1 rounded-full bg-primary-container/20 text-primary border border-primary/30 text-xs font-bold uppercase tracking-tighter">Luxury</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-highest/60 text-on-surface-variant border border-outline-variant text-xs font-bold uppercase tracking-tighter">City Break</span>
+</div>
+<h3 class="font-h2 text-white mb-xs">Dubai, UAE</h3>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="payments">payments</span>
+<span class="font-label-md">Estimated Total: <span class="text-white font-bold">$4,200</span></span>
+</div>
+</div>
+<button class="px-lg py-md bg-primary text-on-primary font-bold rounded-lg active:scale-95 transition-transform duration-200" onclick="window.location.href='budget.html'">
+                            Select Plan
+                        </button>
+</div>
+</div>
+</div>
+<!-- Bali Card -->
+<div class="md:col-span-4 group glass-card rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:border-primary/50">
+<div class="h-48 relative">
+<img alt="Bali Resort" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" data-alt="A serene infinity pool overlooking a lush, tropical jungle in Bali during the early morning. Soft mist clings to the deep green trees, and the water is perfectly still, reflecting the pale lavender sky. The atmosphere is peaceful and opulent, using a natural but refined color palette that emphasizes tranquil luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdYQJqUDw0AMLd1R4fstdz8XR_qEMC6WeGiowotaPSN3h5JPFdHMQM_nTqN-IBno2E_3uPwl5dfJLq4EackXIsbPU1gXHpp18mjnvShkz7tJUrWVIsztMdB1teHbphLf-qVhNNcpam2T9bC936IuR_Nyv0Dz0rD9rLVi_zPARGGfj6JyP0uVFr1F_OPYG2NRh4bpC9_KYf_3cbDv_1DctwpqLZuSBC7Dz7GbCEcOAoaX7DArUNInHuAzeeQfy4klhfJrUPmWTMeg"/>
+<div class="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-full border border-slate-700">
+<span class="text-white text-xs font-bold">$2,850</span>
+</div>
+</div>
+<div class="p-md flex-grow flex flex-col justify-between">
+<div>
+<h4 class="font-h3 text-on-background mb-xs">Bali, Indonesia</h4>
+<p class="text-on-surface-variant font-label-sm line-clamp-2">Exotic beaches, vibrant culture, and world-class wellness retreats.</p>
+</div>
+<button class="mt-lg w-full py-sm bg-surface-container-highest border border-outline-variant text-on-surface font-bold rounded-lg hover:bg-slate-700 active:scale-95 transition-all duration-200" onclick="window.location.href='budget.html'">
+                        Select
+                    </button>
+</div>
+</div>
+<!-- Paris Card -->
+<div class="md:col-span-4 group glass-card rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:border-primary/50">
+<div class="h-48 relative">
+<img alt="Paris Street" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" data-alt="A classic Parisian street scene featuring a charming corner cafe with red awnings and small round tables. In the distance, the Eiffel Tower is visible against a crisp blue afternoon sky. The lighting is bright and clear, highlighting the ornate architecture and sophisticated urban atmosphere of the city of lights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIoKpTL8slJGy_KI9bnjQ7-Yz612V9QbhJtoCN7CsSywEiynyudAP3zXZug43c38mY-x9hHy6ljQHEMxnvnYPrOoHz3K1TVRUJDvh6MD5W_fL_FdPi-3xfDfkgYNw1B-mBd4YqUvv-umm1-zVzZKQz0EF1Qw7YxEXuGR86cOEPgAZGBGvLG3kub5mEvKoXpwCoSv3f9bMLLqA184_MY-QCQBPrZxcoK5TMeDzhoFVyIyhPigr2n2sSZ9MGOyJ_pLLPXqfbUqpxdQ"/>
+<div class="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-full border border-slate-700">
+<span class="text-white text-xs font-bold">$5,100</span>
+</div>
+</div>
+<div class="p-md flex-grow flex flex-col justify-between">
+<div>
+<h4 class="font-h3 text-on-background mb-xs">Paris, France</h4>
+<p class="text-on-surface-variant font-label-sm line-clamp-2">The capital of art, gastronomy, and timeless romance.</p>
+</div>
+<button class="mt-lg w-full py-sm bg-surface-container-highest border border-outline-variant text-on-surface font-bold rounded-lg hover:bg-slate-700 active:scale-95 transition-all duration-200" onclick="window.location.href='budget.html'">
+                        Select
+                    </button>
+</div>
+</div>
+<!-- Goa Card -->
+<div class="md:col-span-4 group glass-card rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:border-primary/50">
+<div class="h-48 relative">
+<img alt="Goa Beach" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" data-alt="A wide golden sand beach in Goa at sunset, with tall palm trees silhouetted against a vibrant orange and pink sky. Gentle waves lap at the shore, and the mood is festive yet relaxed. The photography style is high-contrast and saturated, capturing the warm, energetic spirit of an Indian coastal paradise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlwPDVx-htF2FdSOBfOyzMpy2qK7KCwpNw0PXZ57V3oUHX9s5iV33prEeW_icBJgP1qT6Y6qTnCyLYS1jvJ1AMhv67vlAJrXqubz4NzmqaY3PCmtxlYyjxgFkRNNN_ma-kpc60f1FDKJ0BLnrtyQM5z6dhNy-OUkc5SP6rS1N8y8EYG5N5mt7yf2ICjY9Ex5FuMP8eySaaJkdjLY5JrL0fM-l0qpqnOAkzJssPozULHsrR0OuwEFfHgb4pqcpHpNemERzR8tlIyA"/>
+<div class="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-full border border-slate-700">
+<span class="text-white text-xs font-bold">$1,200</span>
+</div>
+</div>
+<div class="p-md flex-grow flex flex-col justify-between">
+<div>
+<h4 class="font-h3 text-on-background mb-xs">Goa, India</h4>
+<p class="text-on-surface-variant font-label-sm line-clamp-2">Pristine coastlines, colonial architecture, and legendary nightlife.</p>
+</div>
+<button class="mt-lg w-full py-sm bg-surface-container-highest border border-outline-variant text-on-surface font-bold rounded-lg hover:bg-slate-700 active:scale-95 transition-all duration-200" onclick="window.location.href='budget.html'">
+                        Select
+                    </button>
+</div>
+</div>
+<!-- Manali Card -->
+<div class="md:col-span-4 group glass-card rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:border-primary/50">
+<div class="h-48 relative">
+<img alt="Manali Mountains" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" data-alt="A dramatic view of snow-capped Himalayan peaks surrounding the valley of Manali. A thin layer of clouds rests in the valley below, while the sharp ridges are bathed in the cold, bright light of a high-altitude morning. The aesthetic is crisp, utilitarian, and adventurous, emphasizing the vast scale of the mountain landscape." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBewt2aw122wZJBUC5hfrqcEAAEExDn0q4HETG1X5c1Qh2NpIRuuRM9e_WfjkpoJqjAvadvWoxYKS4zDk0UfugX0NbqUECrxWQ4cHX85DVbceEDJuQDCrL2diuYpnvUFdsDRF7yuMZ0oNkExJuu9DcrQRgPWnS3A7KayJzjhbEP0YzDKDLxySfbWicyJYhX8D4NLrkPpJZnCMZAc0gLn382CoaYT3-j0quXzz3mxXPBz6lDU3PwvWWste5f2qB5kCepkyNpWdbWTw"/>
+<div class="absolute top-4 right-4 bg-slate-900/80 backdrop-blur-md px-3 py-1 rounded-full border border-slate-700">
+<span class="text-white text-xs font-bold">$950</span>
+</div>
+</div>
+<div class="p-md flex-grow flex flex-col justify-between">
+<div>
+<h4 class="font-h3 text-on-background mb-xs">Manali, India</h4>
+<p class="text-on-surface-variant font-label-sm line-clamp-2">High-altitude Himalayan resort town for adventure seekers.</p>
+</div>
+<button class="mt-lg w-full py-sm bg-surface-container-highest border border-outline-variant text-on-surface font-bold rounded-lg hover:bg-slate-700 active:scale-95 transition-all duration-200" onclick="window.location.href='budget.html'">
+                        Select
+                    </button>
+</div>
+</div>
+</div>
+<!-- Pagination/Filter Info -->
+<div class="mt-xl py-lg border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-tertiary" data-icon="info">info</span>
+<p class="text-on-surface-variant font-label-sm italic">Showing destinations matching your 'Solo' trip type and $5,000 budget.</p>
+</div>
+<div class="flex gap-sm">
+<button class="px-md py-sm rounded-lg border border-outline-variant font-label-md text-on-surface-variant hover:bg-surface-container transition-colors">Previous</button>
+<button class="px-md py-sm rounded-lg border border-outline-variant font-label-md text-on-surface-variant hover:bg-surface-container transition-colors">Next Page</button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden bg-slate-950/95 backdrop-blur-md text-blue-500 font-['Inter'] text-[11px] font-semibold uppercase tracking-wider fixed bottom-0 w-full z-50 pb-safe border-t border-slate-800 flex justify-around items-center h-20 px-4">
+<a class="flex flex-col items-center justify-center text-slate-500 p-2 hover:text-slate-200 transition-all duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-500 p-2 transition-all duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="travel_explore" style="font-variation-settings: 'FILL' 1;">travel_explore</span>
+<span>Trips</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 p-2 hover:text-slate-200 transition-all duration-150 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span>Profile</span>
+</a>
+</nav>
+</body></html>
