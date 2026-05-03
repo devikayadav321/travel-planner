@@ -1,9 +1,0 @@
-travel-planer
-       |
-       |
-       ___templates
-       |              |
-       |               __------>all files
-       |
-       |
-        __________backend.py
