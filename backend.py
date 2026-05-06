@@ -34,4 +34,5 @@ def travel_planner():
                     
         else:
                 print("error")
-      
+
+travel_planner()
