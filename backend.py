@@ -1,6 +1,6 @@
 import requests 
 
-key=""
+key="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"
 def travel_planner():
         landmark = input("Enter a landmark: ")
         destination = input("Enter a destination: ")
